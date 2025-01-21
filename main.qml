@@ -86,15 +86,22 @@ property alias temperature_sh_spin: temperature_sh_spin
 
            temperature_sh_spin.onValueChanged: {
                 backend.temperature_sh=temperature_sh_spin.value
-               temperature_sh_affichage.set("ddfdfdf")
+               temperature_sh_affichage.text += "\n" + "temperature send:" + temperature_sh_spin.value;
             }
            SpinBox {
                      id: temperature_sh_spin
                      // Layout.preferredHeight: 51
                      // Layout.preferredWidth: 102
                      to: 160
+                     x:30
+                     y:30
                      value: 120
                    }
+
+           Text{
+               x:30
+               text: "Temperature"
+           }
 
 //            temps_sh_spin.onActiveFocusChanged: {
 //                console.log("focus")
